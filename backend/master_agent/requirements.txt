@@ -1,0 +1,31 @@
+# Updated to compatible versions for LangGraph 0.2+ with latest Gemini support
+# Tested and verified working together as of December 2025
+
+# Core LangChain packages - Using latest stable versions
+langchain>=0.3.0
+langchain-core>=0.3.0
+langgraph>=0.2.0
+
+# Google Gemini integration - Latest version (3.2.0 as of Nov 2025)
+# Works with langchain-core 1.1.1+ via compatibility shim in main.py
+langchain-google-genai>=3.2.0
+
+# New Google Gen AI SDK (recommended by Google over old SDK)
+google-genai>=1.19.0
+
+# Community packages for additional functionality
+langchain-community>=0.3.0
+langchain-text-splitters>=1.0.0
+
+# Supporting packages
+langsmith>=0.1.0
+
+# Environment and server
+python-dotenv>=1.0.0
+fastapi>=0.104.0
+uvicorn>=0.24.0
+httpx>=0.25.0
+
+# Optional but recommended
+pydantic>=2.0.0
+python-multipart>=0.0.6

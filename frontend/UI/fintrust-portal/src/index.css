@@ -1,0 +1,317 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* FinTrust NBFC Design System - Corporate Blue + Pastel Theme */
+    --background: 40 33% 97%;
+    --foreground: 220 50% 15%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 220 50% 15%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 220 50% 15%;
+
+    /* Corporate Blue Primary */
+    --primary: 215 60% 28%;
+    --primary-foreground: 40 33% 98%;
+
+    /* Soft Blue Secondary */
+    --secondary: 210 40% 94%;
+    --secondary-foreground: 215 60% 28%;
+
+    /* Muted Pastel */
+    --muted: 40 20% 92%;
+    --muted-foreground: 220 20% 45%;
+
+    /* Gold Accent for CTAs */
+    --accent: 38 90% 55%;
+    --accent-foreground: 220 50% 12%;
+
+    /* Status Colors */
+    --destructive: 0 72% 51%;
+    --destructive-foreground: 0 0% 100%;
+
+    --success: 142 70% 40%;
+    --success-foreground: 0 0% 100%;
+
+    --warning: 38 92% 50%;
+    --warning-foreground: 220 50% 12%;
+
+    --info: 200 80% 50%;
+    --info-foreground: 0 0% 100%;
+
+    --border: 220 20% 88%;
+    --input: 220 20% 88%;
+    --ring: 215 60% 28%;
+
+    --radius: 0.75rem;
+
+    /* Gradients */
+    --gradient-hero: linear-gradient(135deg, hsl(215 60% 28%) 0%, hsl(220 70% 20%) 100%);
+    --gradient-card: linear-gradient(180deg, hsl(0 0% 100%) 0%, hsl(40 33% 98%) 100%);
+    --gradient-accent: linear-gradient(135deg, hsl(38 90% 55%) 0%, hsl(28 90% 50%) 100%);
+    --gradient-pastel: linear-gradient(180deg, hsl(40 33% 97%) 0%, hsl(210 30% 95%) 100%);
+
+    /* Shadows */
+    --shadow-sm: 0 2px 8px -2px hsl(220 50% 15% / 0.08);
+    --shadow-md: 0 8px 24px -8px hsl(220 50% 15% / 0.12);
+    --shadow-lg: 0 16px 40px -12px hsl(220 50% 15% / 0.16);
+    --shadow-glow: 0 0 40px hsl(215 60% 28% / 0.15);
+
+    /* Sidebar */
+    --sidebar-background: 0 0% 100%;
+    --sidebar-foreground: 220 50% 15%;
+    --sidebar-primary: 215 60% 28%;
+    --sidebar-primary-foreground: 40 33% 98%;
+    --sidebar-accent: 210 40% 94%;
+    --sidebar-accent-foreground: 215 60% 28%;
+    --sidebar-border: 220 20% 88%;
+    --sidebar-ring: 215 60% 28%;
+  }
+
+  .dark {
+    --background: 220 50% 8%;
+    --foreground: 40 33% 97%;
+
+    --card: 220 45% 12%;
+    --card-foreground: 40 33% 97%;
+
+    --popover: 220 45% 12%;
+    --popover-foreground: 40 33% 97%;
+
+    --primary: 210 60% 60%;
+    --primary-foreground: 220 50% 8%;
+
+    --secondary: 220 40% 18%;
+    --secondary-foreground: 40 33% 97%;
+
+    --muted: 220 30% 18%;
+    --muted-foreground: 220 20% 65%;
+
+    --accent: 38 85% 55%;
+    --accent-foreground: 220 50% 8%;
+
+    --destructive: 0 65% 50%;
+    --destructive-foreground: 0 0% 100%;
+
+    --success: 142 65% 45%;
+    --success-foreground: 0 0% 100%;
+
+    --warning: 38 85% 55%;
+    --warning-foreground: 220 50% 8%;
+
+    --info: 200 75% 55%;
+    --info-foreground: 0 0% 100%;
+
+    --border: 220 30% 20%;
+    --input: 220 30% 20%;
+    --ring: 210 60% 60%;
+
+    --sidebar-background: 220 45% 10%;
+    --sidebar-foreground: 40 33% 97%;
+    --sidebar-primary: 210 60% 60%;
+    --sidebar-primary-foreground: 220 50% 8%;
+    --sidebar-accent: 220 40% 18%;
+    --sidebar-accent-foreground: 40 33% 97%;
+    --sidebar-border: 220 30% 20%;
+    --sidebar-ring: 210 60% 60%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+    font-family: 'DM Sans', system-ui, sans-serif;
+  }
+}
+
+@layer components {
+  /* Glass Morphism Card */
+  .glass-card {
+    @apply bg-card/80 backdrop-blur-md border border-border/50;
+    box-shadow: var(--shadow-md);
+  }
+
+  /* Gradient Text */
+  .gradient-text {
+    @apply bg-clip-text text-transparent;
+    background-image: var(--gradient-hero);
+  }
+
+  /* Hover Scale */
+  .hover-lift {
+    @apply transition-all duration-300 ease-out;
+  }
+
+  .hover-lift:hover {
+    @apply -translate-y-1;
+    box-shadow: var(--shadow-lg);
+  }
+
+  /* Animated Background Blobs */
+  .animated-blob {
+    @apply absolute rounded-full mix-blend-multiply filter blur-3xl opacity-30;
+    animation: blob 12s infinite;
+  }
+
+  .animated-blob:nth-child(2) {
+    animation-delay: 4s;
+  }
+
+  .animated-blob:nth-child(3) {
+    animation-delay: 8s;
+  }
+
+  /* Status Badge Variants */
+  .status-approved {
+    @apply bg-success/10 text-success border-success/20;
+  }
+
+  .status-pending {
+    @apply bg-warning/10 text-warning border-warning/20;
+  }
+
+  .status-rejected {
+    @apply bg-destructive/10 text-destructive border-destructive/20;
+  }
+
+  /* Dashboard Card */
+  .dashboard-card {
+    @apply bg-card rounded-xl border border-border p-6 transition-all duration-300;
+    box-shadow: var(--shadow-sm);
+  }
+
+  .dashboard-card:hover {
+    box-shadow: var(--shadow-md);
+  }
+
+  /* Loan Card Gradient */
+  .loan-card-personal {
+    background: linear-gradient(135deg, hsl(215 60% 28%) 0%, hsl(230 50% 35%) 100%);
+  }
+
+  .loan-card-home {
+    background: linear-gradient(135deg, hsl(142 50% 35%) 0%, hsl(160 60% 30%) 100%);
+  }
+
+  .loan-card-business {
+    background: linear-gradient(135deg, hsl(38 80% 50%) 0%, hsl(25 85% 45%) 100%);
+  }
+
+  .loan-card-education {
+    background: linear-gradient(135deg, hsl(280 50% 40%) 0%, hsl(260 60% 50%) 100%);
+  }
+}
+
+@layer utilities {
+  /* Scrollbar Styling */
+  .scrollbar-thin {
+    scrollbar-width: thin;
+    scrollbar-color: hsl(var(--muted)) transparent;
+  }
+
+  .scrollbar-thin::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+
+  .scrollbar-thin::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  .scrollbar-thin::-webkit-scrollbar-thumb {
+    background: hsl(var(--muted));
+    border-radius: 3px;
+  }
+
+  .scrollbar-thin::-webkit-scrollbar-thumb:hover {
+    background: hsl(var(--muted-foreground));
+  }
+}
+
+/* Keyframe Animations */
+@keyframes blob {
+  0%, 100% {
+    transform: translate(0, 0) scale(1);
+  }
+  25% {
+    transform: translate(30px, -50px) scale(1.1);
+  }
+  50% {
+    transform: translate(-20px, 20px) scale(0.9);
+  }
+  75% {
+    transform: translate(-40px, -30px) scale(1.05);
+  }
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+@keyframes pulse-soft {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.7;
+  }
+}
+
+@keyframes slide-up {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slide-in-right {
+  from {
+    opacity: 0;
+    transform: translateX(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}

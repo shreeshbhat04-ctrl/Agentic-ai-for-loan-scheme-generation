@@ -1,0 +1,32 @@
+﻿
+﻿# ===== Python backend =====
+__pycache__/
+*.py[cod]
+*.egg-info/
+venv/
+.env
+
+# ===== Node.js frontend =====
+node_modules/
+npm-debug.log*
+yarn-error.log*
+
+# ===== IDE & OS =====
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+
+# ===== Logs & build =====
+*.log
+build/
+dist/
+
+# ===== Database / Mock data =====
+backend/db/*.sqlite3
+backend/db/*.db
+*.csv
+*.json
+=======
+
+
