@@ -24,7 +24,7 @@ langsmith>=0.1.0
 python-dotenv>=1.0.0
 fastapi>=0.104.0
 uvicorn>=0.24.0
-httpx>=0.25.0
+httpx>=0.28.1
 
 # Optional but recommended
 pydantic>=2.0.0
