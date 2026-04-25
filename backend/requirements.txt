@@ -11,6 +11,6 @@ pytesseract>=0.3.10
 scrapy>=2.11.0
 selenium>=4.15.0
 scrapy-selenium>=0.0.7
-pymongo>=4.6.0
+pymongo>=4.17.0
 pdfplumber>=0.10.0
 fpdf>=1.7.2
